@@ -1,6 +1,6 @@
 app:
-    name: OpenProject Postgres Master
-    code: OpenProjectPostgres
+    name: Postgres Master
+    code: POSTGRES
     notify: appzdev@cloudbourne.co
     
 build:
@@ -22,8 +22,8 @@ volumes:
     mount: /appz/data
     name: data
     size: 5Gi
-    mode: ReadWriteOnce   
-    
+    mode: ReadWriteOnce
+          
 properties:
     POSTGRESQL_REPLICATION_MODE: master
     POSTGRESQL_DATA: /appz/data
@@ -37,14 +37,8 @@ properties:
     POSTGRESQL_REP_USER: replica
     PGPASSWORD: 
       vault: PGPASSWORD
+    APPUSER_PASSWORD:
+      vault: APPUSER_PASSWORD
     POSTGRESQL_OPENPROJECT_PASSWORD:
       vault: POSTGRESQL_OPENPROJECT_PASSWORD
-    revision : 85
-
-    #WebDav Setup
-    #PUSH_BACKUP_WEBDAV: False
-    #DAV_FOLDER: DBBACKUP
-    #DAV_USER: appz
-    #DAV_USERPASSWORD:
-    #  vault: DAV_USERPASSWORD
-    #WEBDAV_BACKUP_URL: http://webdav-2-0/
+    revision : 56
