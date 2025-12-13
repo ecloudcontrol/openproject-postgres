@@ -4,11 +4,11 @@ app:
     notify: appzdev@cloudbourne.co
     
 build:
-    version: 13.X
+    version: 17.1
     env: PROD
     build_file: none
     output_files: output/*.zip
-    image_template: postgres_master-13.3
+    image_template: postgres_master-17.1
     
 deploy:
     context: ecloudcontrol/PROD
@@ -47,4 +47,5 @@ properties:
     POSTGRESQL_DOTNET_PASSWORD:
       vault: POSTGRESQL_DOTNET_PASSWORD
     ENABLE_BACKUP_METRIC: 1
+    ALL_DB_BACKUP: 1
     revision : 60
